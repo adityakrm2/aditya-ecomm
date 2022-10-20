@@ -9,7 +9,9 @@ const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
 const newsLetterRoute = require("./routes/newsLetter")
+const slash = require("./routes/slash")
 const cors = require("cors");
+
 dotenv.config();
 
 mongoose
@@ -24,9 +26,10 @@ mongoose
 // })
 app.use(cors())
 app.use(express.json())
-app.get("/", (req, res) => {
-    res.json("server started")
-})
+// app.get("/", (req, res) => {
+//     res.json("server started")
+// })
+app.use("/", slash);
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
