@@ -21,14 +21,10 @@ mongoose
         console.log(err);
     });
 
-app.get("/api/test", () => {
-    res.json("test is successfull")
-})
+
 app.use(cors())
 app.use(express.json())
-app.get("/", (req, res) => {
-    res.json("server started")
-})
+
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
