@@ -29,7 +29,7 @@ app.use(express.json())
 // app.get("/", (req, res) => {
 //     res.json("server started")
 // })
-app.use("/", slash);
+app.use("/api", slash);
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
